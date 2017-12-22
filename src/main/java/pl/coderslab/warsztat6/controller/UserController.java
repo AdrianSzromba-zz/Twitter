@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import pl.coderslab.warsztat6.bean.LoginData;
 import pl.coderslab.warsztat6.bean.SessionManager;
@@ -48,11 +49,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public String loginPost(@ModelAttribute LoginData loginData, Model m) {
+	public String loginPost(@ModelAttribute LoginData loginData, Model m, RedirectAttributes ra) {
 		User user = this.userRepository.findOneByEmail(loginData.getEmail());
 		if (user != null && user.isPasswordCorrect(loginData.getPassword())) {
 			HttpSession s = SessionManager.session();
 			s.setAttribute("user", user);
+			ra.addFlashAttribute("msg", "Jestes zalogowany");
 			return "redirect:/";
 		}
 		m.addAttribute("msg", "Wprowadz poprawne dane");
