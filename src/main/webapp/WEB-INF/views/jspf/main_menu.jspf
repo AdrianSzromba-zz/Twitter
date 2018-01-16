@@ -11,6 +11,7 @@
 			<a href="login">Login</a>
 		</c:when>
 		<c:otherwise>
+			<a href="/warsztat6/change">Edit profile</a>
 			<a href="logout">Logout</a>
 		</c:otherwise>
 	</c:choose>
