@@ -7,14 +7,15 @@
 <p>
 	<c:choose>
 		<c:when test="${sessionScope.user==null}">
-			<a href="register">Register</a>
-			<a href="login">Login</a>
+			<a href="/warsztat6/register">Register</a>
+			<a href="/warsztat6/login">Login</a>
 		</c:when>
 		<c:otherwise>
 			<a href="/warsztat6/">Main page</a>
 			<a href="/warsztat6/user">Your tweets</a>
+			<a href="/warsztat6/message">Messages</a>
 			<a href="/warsztat6/change">Edit profile</a>
-			<a href="logout">Logout</a>
+			<a href="/warsztat6/logout">Logout</a>
 		</c:otherwise>
 	</c:choose>
 </p>

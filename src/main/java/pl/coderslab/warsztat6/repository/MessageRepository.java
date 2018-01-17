@@ -12,5 +12,5 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
 	List<Message> findByRecieverIdOrderByCreatedDesc(long id);
 	List<Message> findByRecieverOrderByCreatedDesc(User reciever);
 	List<Message> findBySenderOrderByCreatedDesc(User sender);
-	List<Message> findByRecieverAndCheckedLikeOrderByCreatedDesc(User reciever, boolean checked);
+	List<Message> findByRecieverAndCheckedLikeOrderByCreatedDesc(User reciever, int checked);
 }
