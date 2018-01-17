@@ -11,6 +11,8 @@
 			<a href="login">Login</a>
 		</c:when>
 		<c:otherwise>
+			<a href="/warsztat6/">Main page</a>
+			<a href="/warsztat6/user">Your tweets</a>
 			<a href="/warsztat6/change">Edit profile</a>
 			<a href="logout">Logout</a>
 		</c:otherwise>

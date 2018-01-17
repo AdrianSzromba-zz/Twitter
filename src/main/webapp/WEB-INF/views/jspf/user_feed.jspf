@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+    <%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ page session="true" %>
+<p>
+<c:forEach items="${userTweets}" var="tweet">
+<p>${tweet.text} <a href="/warsztat6/tweet/${tweet.id}">(tweet details and comments)</a></p>
+<p>created ${tweet.created} by ${tweet.user.username}</p>
+<p>Number of comments ${tweet.commentSize}</p>
+<br />
+</c:forEach>
+</p>
