@@ -25,7 +25,7 @@ public class Tweet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@NotNull
-	private int id;
+	private long id;
 	
 	@ManyToOne
 	private User user;
@@ -53,11 +53,11 @@ public class Tweet {
 		this.created = new Date();
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -91,6 +91,10 @@ public class Tweet {
 
 	public void setComment(List<Comment> comment) {
 		this.comment = comment;
+	}
+	
+	public int getCommentSize() {
+		return this.comment.size();
 	}
 	
 }

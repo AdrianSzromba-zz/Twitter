@@ -30,7 +30,7 @@ public class Comment {
 	@ManyToOne
 	private Tweet tweet;
 	
-	public Comment(Date created) {
+	public Comment() {
 		super();
 		this.created = new Date();
 	}
