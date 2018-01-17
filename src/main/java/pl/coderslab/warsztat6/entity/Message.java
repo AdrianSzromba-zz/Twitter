@@ -25,12 +25,12 @@ public class Message {
 	@ManyToOne
 	private User reciever;
 	
-	private boolean checked;
+	private int checked;
 	
 	public Message() {
 		super();
 		this.created = new Date();
-		this.checked = false;
+		this.checked = 0;
 	}
 
 	public long getId() {
@@ -73,11 +73,11 @@ public class Message {
 		this.reciever = reciever;
 	}
 
-	public boolean isChecked() {
+	public int isChecked() {
 		return checked;
 	}
 
-	public void setChecked(boolean checked) {
+	public void setChecked(int checked) {
 		this.checked = checked;
 	}
 	
