@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@	taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@	taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page session="true"%>
+<p>
+	<c:choose>
+
+		<c:when test="${sessionScope.user == null}">
+		You need to be logged in.
+	</c:when>
+
+		<c:otherwise>
+			<form:form action="tweet/add"  method="post" modelAttribute="tweet">
+				Tweet Text <form:input path="text" type="textarea" /><form:errors path="text"></form:errors><br />
+				<input type="submit" />
+			</form:form>
+		</c:otherwise>
+
+	</c:choose>
+</p>
